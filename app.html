@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopiko Blanca Sponsor Task</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #FFFFFF;
+            color: #1A3C34;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .promo-ended {
+            text-align: center;
+            padding: 50px;
+            font-size: 2rem;
+            color: #D32F2F;
+            font-weight: 700;
+            background-color: #F5F5F5;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* [Rest of your existing CSS styles remain unchanged] */
+        .winner-banner {
+            background-color: #E8F0E9;
+            color: #1A3C34;
+            padding: 10px 0;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+        }
+        .winner-banner p {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .user-reviews {
+            margin: 40px 0;
+            text-align: center;
+        }
+        .user-reviews h2 {
+            font-size: 2rem;
+            color: #1A3C34;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .user-reviews img {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .review-box {
+            background: #FFFFFF;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .review-box small {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        .sponsor-logos {
+            text-align: center;
+            margin: 40px 0;
+            background-color: #F5F5F5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .sponsor-logos p {
+            font-size: 1.1rem;
+            color: #2E7D32;
+            margin-bottom: 15px;
+        }
+        .sponsor-logos .logos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .sponsor-logos .logos img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .instructions {
+            margin: 60px 0 40px;
+            text-align: center;
+            background-color: #F5F5F5;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+        .instructions h2 {
+            font-size: 2rem;
+            color: #1A3C34;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #FFFFFF;
+            border-left: 4px solid #1A3C34;
+            border-radius: 4px;
+        }
+        .step-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1A3C34;
+            margin-right: 15px;
+        }
+        .step-image img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .step-text {
+            font-size: 1.1rem;
+            color: #2E7D32;
+        }
+        .download-section {
+            text-align: center;
+            margin: 40px 0;
+            background-color: #F5F5F5;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .download-section h3 {
+            font-size: 1.5rem;
+            color: #1A3C34;
+            margin-bottom: 10px;
+        }
+        .download-section p {
+            font-size: 1rem;
+            color: #2E7D32;
+            margin-bottom: 20px;
+        }
+        .download-section a {
+            display: inline-block;
+            background-color: #1A3C34;
+            color: #FFFFFF;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .download-section a:hover {
+            background-color: #2E7D32;
+        }
+        .download-section small {
+            display: block;
+            font-size: 0.9rem;
+            color: #D32F2F;
+            margin-top: 10px;
+        }
+        .proof-section {
+            text-align: center;
+            margin: 40px 0;
+            background-color: #F5F5F5;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .proof-section h3 {
+            font-size: 1.5rem;
+            color: #1A3C34;
+            margin-bottom: 10px;
+        }
+        .proof-section img {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .proof-section p {
+            font-size: 1rem;
+            color: #2E7D32;
+            margin-top: 10px;
+        }
+        .form-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+        .form-section iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .countdown {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            color: #1A3C34;
+            background-color: #E8F0E9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .footer {
+            background-color: #F5F5F5;
+            color: #1A3C34;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            border-top: 1px solid #E0E0E0;
+        }
+        .sponsored-app {
+            text-align: center;
+            margin: 40px 0;
+            background-color: #F5F5F5;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .sponsored-app h2 {
+            font-size: 2rem;
+            color: #1A3C34;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .sponsored-app p {
+            font-size: 1.1rem;
+            color: #2E7D32;
+            margin-bottom: 20px;
+        }
+        .sponsored-app span.highlight {
+            font-weight: bold;
+            color: #1A3C34;
+        }
+        @media (max-width: 768px) {
+            .step { flex-direction: column; text-align: center; }
+            .step-image img { width: 150px; height: 150px; }
+            .proof-section img { width: 200px; }
+            .user-reviews img { width: 200px; }
+            .sponsor-logos .logos img { width: 60px; height: 60px; }
+            .form-section iframe { height: 500px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="page-content">
+        <!-- Promo Ended Message (Hidden by Default) -->
+        <div id="promo-ended" class="promo-ended" style="display: none;">
+            Promo Ended
+        </div>
+
+        <!-- Main Content (Shown if Promo is Active) -->
+        <div id="main-content">
+            <!-- Scrolling Winner Banner -->
+            <div class="winner-banner">
+                <p id="winner-text">🎉 Congratulations to U****N for successfully receiving 5 pesos and got +2 entries!</p>
+            </div>
+
+            <!-- Main Content -->
+            <div class="container">
+                <!-- Sponsored App Section -->
+                <div class="sponsored-app">
+                    <h2>Sponsored App</h2>
+                    <p>The promo of Kopiko is ending, that's why we'd like you to give an extra chances to win ₱1 million pesos. Users have a chance to get <span class="highlight">+2 ENTRIES</span> and <span class="highlight">FREE 5 PESOS</span> just by downloading and signing up on our sponsor app!</p>
+                </div>
+
+                <!-- Sponsor Logos Section -->
+                <div class="sponsor-logos">
+                    <p>Sponsored by the following:</p>
+                    <div class="logos">
+                        <img src="https://i.ibb.co/S4mvRvGD/philea-about-logo.png" alt="Phelia company" title="philea">
+                        <img src="https://i.ibb.co/QFxNW68Q/download-2.png" alt="Kopiko" title="Logo for StarLink Corp">
+                        <img src="https://i.ibb.co/YTF40Kt6/download.jpg" alt="Lunar Innovations" title="Logo for Lunar Innovations">
+                        <img src="https://i.ibb.co/5Xhh8hbp/download-3.png" alt="Orbit Solutions" title="Logo for Orbit Solutions">
+                    </div>
+                </div>
+
+                <!-- Instructions -->
+                <div class="instructions">
+                    <h2>Step-by-Step Instructions</h2>
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-image"><img src="https://i.ibb.co/kgXhRphy/Photo-Collage-1755695157620.jpg" alt="Step 1" title="Add your edited image for Step 1"></div>
+                        <div class="step-text">Download the sponsored app from the link provided below.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div></div>
+                        <div class="step-text">Install ang app sa iyong device at buksan ito.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div></div>
+                        <div class="step-text">Mag-Sign in sa app gamit ang iyong google account.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-image"><img src="https://i.ibb.co/TxLsDSVw/IMG-20250821-065533.jpg" alt="Step 4" title="Add your edited image for Step 4"></div>
+                        <div class="step-text">Successfully withdraw 5 pesos at kumuha ng screenshot. sa iyong pag withdraw</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-image"><img src="https://i.ibb.co/GvRWp2zz/Photo-Collage-1755697425883.jpg" alt="Step 5" title="Add your edited image for Step 5"></div>
+                        <div class="step-text">i-Submit ang screenshot sa form sa ibaba para sa beripikasyon.</div>
+                    </div>
+                </div>
+
+                <!-- Download Section -->
+                <div class="download-section">
+                    <h3>Download Sponsored App</h3>
+                    <p>Earn +2 entries per sign-in and get free 5 pesos upon download!</p>
+                    <a href="https://s.hifamiapp.com/1/WWsJajWho" target="_blank">Download Now</a>
+                    <small>Sponsored by our partner SPACEZ TECHNOLOGY</small>
+                </div>
+
+                <!-- Example Proof -->
+                <div class="proof-section">
+                    <h2>Submit Proof of Installation </h2>
+                    <p>Isang device lang bawat account. Submit a screenshot of the installed app and sign-in proof. mangyaring maghintay sa beripikasyon.</p>
+                </div>
+
+                <!-- Google Form -->
+                <div class="form-section">
+                    <iframe src="https://cieziueq.formester.com/f/De8agO45G" title="Submit Proof Form"></iframe>
+                </div>
+
+                <!-- User Reviews -->
+                <div class="user-reviews">
+                    <h2>User Reviews</h2>
+                    <img src="https://i.ibb.co/ZzYjzGp8/download-1.jpg" alt="User Reviews" title="Add your edited image for user reviews">
+                    <div class="review-box">A****y says: "Salamat, natanggap ko na yung 5 pesos."<small>Aug 21, 2025</small>
+                    <img src="https://i.ibb.co/FbhmHx6L/IMG-20250820-211442.jpg" alt="User Reviews" title="Add your edited image for user reviews"></div>
+                    <div class="review-box">J****n says: "Okay nadin, natanggap ko na yung reward. may free 5 pesos sila at 2 free raffle entries kaya okay nadin kaysa wala "<small>Aug 21, 2025</small>
+                    <img src="https://i.ibb.co/1fq3b0jg/IMG-20250820-215640.png" alt="User Reviews" title="Add your edited image for user reviews"></div>
+                    <div class="review-box">R****a says: "Grabe, naka 10 pesos ako dalawa kasi Google account ko!"<small>Aug 21, 2025</small></div>
+                    <div class="review-box">K****e says: "Madali lang yung steps, natanggap ko na yung 5 pesos ko."<small>Aug 20, 2025</small><img src="https://i.ibb.co/9kDQ3c3D/1755698779113.jpg" alt="User Reviews" title="Add your edited image for user reviews"></div>
+                    <div class="review-box">T****o says: "Salamat sa promo, pwedeng pang load"<small>Aug 20, 2025</small></div>
+                    <div class="review-box">P****i says: "Legit yung 5 pesos, natanggap ko na. Subukan niyo rin!"<small>Aug 20, 2025</small></div>
+                    <div class="review-box">S****d says: "Wow, ang bilis nung 5 pesos! Salamat, Kopiko!"<small>Aug 20, 2025</small></div>
+                    <div class="review-box">B****y says: "Nakuha ko na yung 5 pesos, salamat sa ganitong papromo Kopiko!"<small>Aug 20, 2025</small></div>
+                    <div class="review-box">L****m says: "Okay yung proseso, pwede din pala maya dito."<small>Aug 20, 2025</small>
+                    <img src="https://i.ibb.co/PGRJ8HLG/IMG-20250820-215424-1.png" alt="User Reviews" title="Add your edited image for user reviews"></div>
+                    <div class="review-box">F****a says: "Sobrang saya ko, dumating na yung 5 pesos salamat po."<small>Aug 19, 2025</small></div>
+                    <div class="review-box">G****o says: "Salamat, ang bilis ng verification! Sulit sumali!"<small>Aug 19, 2025</small></div>
+                    <div class="review-box">H****i says: "Nakuha ko na yung 5 pesos, salamat sa Kopiko!"<small>Aug 19, 2025</small></div>
+                    <div class="review-box">C****e says: "Legit yung promo, natanggap ko na yung reward ko.unli 5 pesos pang load"<small>Aug 19, 2025</small><img src="https://i.ibb.co/jPb65fTb/IMG-20250820-221206.jpg" alt="User Reviews" title="Add your edited image for user reviews"></div>
+                    <div class="review-box">V****u says: "Salamat, nakuha ko na yung 5 pesos. Try niyo na rin !"<small>Aug 19, 2025</small></div>
+                    <div class="review-box">Z****x says: "Okay na okay, natanggap ko na yung 5 pesos!"<small>Aug 19, 2025</small></div>
+                    <div class="review-box">Q****w says: "Sobrang saya ko nung natanggap ko yung 5 pesos!"<small>Aug 21, 2025</small></div>
+                    <div class="review-box">D****r says: "Salamat sa 5 petot hehehe!"<small>Aug 21, 2025</small></div>
+                    <div class="review-box">N****k says: "Natanggap ko na yung reward, Salamat at may pa free 2 raffle pa sila!"<small>Aug 21, 2025</small></div>
+                    <div class="review-box">W****p says: "Ang bilis lang talaga, nakuha ko na yung 5 pesos!"<small>Aug 21, 2025</small></div>
+                    <div class="review-box">Y****t says: "Salamat, legit yung 5 pesos. Sulit sumali dito!"<small>Aug 20, 2025</small></div>
+                    <div class="review-box">J****h says: "Nakuha ko na yung 5 pesos,thanks!"<small>Aug 20, 2025</small></div>
+                    <div class="review-box">M****s says: "Legit na legit yung promo, natanggap ko na!"<small>Aug 20, 2025</small></div>
+                    <div class="review-box">L****f says: "Salamat, natanggap ko na yung 5 pesos ko!"<small>Aug 20, 2025</small></div>
+                    <div class="review-box">P****g says: "Ang galing, madali lang yung steps. Try niyo!"<small>Aug 20, 2025</small></div>
+                    <div class="review-box">K****j says: "Salamat sa 5 pesos, sobrang happy ako!"<small>Aug 19, 2025</small></div>
+                    <div class="review-box">T****b says: "Nakuha ko na yung reward, salamat talaga!"<small>Aug 19, 2025</small></div>
+                    <div class="review-box">R****z says: "Sobrang ganda nung promo, nakuha ko na yung 5 pesos!"<small>Aug 19, 2025</small></div>
+                    <div class="review-box">M****l says: "I'm happy kahit na 5 lang sia! Legit , legit to pwede pala siya sa paypal"<small>Aug 21, 2025</small>  <img src="https://i.ibb.co/Q7fcBkHh/IMG-20250820-221959.jpg" alt="User Reviews" title="Add your edited image for user reviews"></div>   
+                    <div class="review-box">S****n says: "Natanggap ko na yung 5 pesos tips lang guys kung may isa pa kayong cellphone pwede kayo mag download dun para maging 10 pesos"<small>Aug 19, 2025</small></div>
+                    <div class="review-box">H****m says: "Legit yung reward, salamat sa Kopiko!"<small>Aug 19, 2025</small></div>
+                </div>
+
+                <!-- Countdown Timer -->
+                <div class="countdown" id="countdown"></div>
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <p>Official promo sponsor website. In accordance with DTI Fair Trade Permit No. FTEB-00193743 Series of 2025.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if promo has ended
+        const endDate = new Date('August 31, 2025 00:00:00 PST');
+        const now = new Date();
+        const promoEnded = now >= endDate;
+
+        if (promoEnded) {
+            // Show only the "Promo Ended" message
+            document.getElementById('promo-ended').style.display = 'flex';
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('countdown').innerHTML = 'Promo has ended!';
+        } else {
+            // Show the main content and run the countdown timer
+            document.getElementById('promo-ended').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+
+            // Countdown Timer (Realtime)
+            function updateCountdown() {
+                const now = new Date();
+                const timeDiff = endDate - now;
+                if (timeDiff <= 0) {
+                    document.getElementById('countdown').innerHTML = 'Promo has ended!';
+                    document.getElementById('promo-ended').style.display = 'flex';
+                    document.getElementById('main-content').style.display = 'none';
+                    return;
+                }
+                const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+                document.getElementById('countdown').innerHTML = `Days left: ${days} - H: ${hours}, M: ${minutes}, S: ${seconds}`;
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // Scrolling Banner Randomization
+            const usernames = ["J****n", "M****a", "J**N**e", "May*** D**a", "M** M***k", "L** W*k**a", "C** a**o", "S** J**a", "B**** h***j", "C****a"];
+            function updateWinnerBanner() {
+                const randomUser = usernames[Math.floor(Math.random() * usernames.length)];
+                document.getElementById('winner-text').textContent = `🎉 Congratulations to ${randomUser} for successfully receiving 5 pesos and got +2 entries!`;
+            }
+            updateWinnerBanner();
+            window.addEventListener('load', updateWinnerBanner);
+        }
+    </script>
+</body>
+</html>
