@@ -36,7 +36,18 @@
             align-items: center;
             justify-content: center;
         }
-        /* [Rest of your existing CSS styles remain unchanged] */
+        .countdown-timer {
+            text-align: center;
+            padding: 20px;
+            background-color: #D32F2F;
+            color: #FFFFFF;
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: sticky;
+            top: 0;
+            z-index: 1002;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
         .winner-banner {
             background-color: #E8F0E9;
             color: #1A3C34;
@@ -48,7 +59,7 @@
             white-space: nowrap;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: sticky;
-            top: 0;
+            top: 50px;
             z-index: 1001;
         }
         .winner-banner p {
@@ -70,13 +81,6 @@
             margin-bottom: 20px;
             font-weight: 700;
         }
-        .user-reviews img {
-            width: 300px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
         .review-box {
             background: #FFFFFF;
             padding: 15px;
@@ -88,7 +92,32 @@
             display: block;
             font-size: 0.8rem;
             color: #666;
-            margin-top: 5px;
+        }
+        .comment-section {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .comment-section input {
+            padding: 10px;
+            width: 80%;
+            max-width: 500px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .comment-section button {
+            background-color: #1A3C34;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .comment-section button:hover {
+            background-color: #2E7D32;
         }
         .sponsor-logos {
             text-align: center;
@@ -114,6 +143,14 @@
             height: 80px;
             border-radius: 50%;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .sponsor-logos .legitimacy-text {
+            font-size: 0.9rem;
+            color: #1A3C34;
+            margin-top: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .instructions {
             margin: 60px 0 40px;
@@ -144,13 +181,6 @@
             color: #1A3C34;
             margin-right: 15px;
         }
-        .step-image img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
         .step-text {
             font-size: 1.1rem;
             color: #2E7D32;
@@ -170,8 +200,9 @@
         }
         .download-section p {
             font-size: 1rem;
-            color: #2E7D32;
+            color: #D32F2F;
             margin-bottom: 20px;
+            font-weight: 500;
         }
         .download-section a {
             display: inline-block;
@@ -184,6 +215,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease;
+            animation: heartbeat 1.5s ease-in-out infinite;
         }
         .download-section a:hover {
             background-color: #2E7D32;
@@ -193,59 +225,6 @@
             font-size: 0.9rem;
             color: #D32F2F;
             margin-top: 10px;
-        }
-        .proof-section {
-            text-align: center;
-            margin: 40px 0;
-            background-color: #F5F5F5;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
-        .proof-section h3 {
-            font-size: 1.5rem;
-            color: #1A3C34;
-            margin-bottom: 10px;
-        }
-        .proof-section img {
-            width: 300px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-        .proof-section p {
-            font-size: 1rem;
-            color: #2E7D32;
-            margin-top: 10px;
-        }
-        .form-section {
-            margin: 40px 0;
-            text-align: center;
-        }
-        .form-section iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
-        .countdown {
-            text-align: center;
-            margin: 20px 0;
-            font-size: 1.2rem;
-            color: #1A3C34;
-            background-color: #E8F0E9;
-            padding: 10px;
-            border-radius: 8px;
-        }
-        .footer {
-            background-color: #F5F5F5;
-            color: #1A3C34;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 0.9rem;
-            border-top: 1px solid #E0E0E0;
         }
         .sponsored-app {
             text-align: center;
@@ -263,20 +242,197 @@
         }
         .sponsored-app p {
             font-size: 1.1rem;
-            color: #2E7D32;
+            color: #D32F2F;
             margin-bottom: 20px;
         }
         .sponsored-app span.highlight {
             font-weight: bold;
             color: #1A3C34;
         }
+        .sponsored-app-image {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .upload-section {
+            margin: 40px 0;
+            text-align: center;
+            background-color: #F5F5F5;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        .upload-section input[type="file"] {
+            margin: 10px 0;
+        }
+        .upload-section button {
+            background-color: #1A3C34;
+            color: #FFFFFF;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .upload-section button:hover {
+            background-color: #2E7D32;
+        }
+        .upload-section button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .edit-button {
+            display: inline-block;
+            text-align: left;
+            font-size: 0.8rem;
+            color: #1A3C34;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .loading {
+            display: none;
+            font-size: 1.2rem;
+            color: #1A3C34;
+            margin: 20px 0;
+        }
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #1A3C34;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+        .small-loading::after {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #1A3C34;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            20% { transform: scale(1.2); }
+            40% { transform: scale(1); }
+            60% { transform: scale(1.2); }
+            80% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+        .gcash-section {
+            display: none;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .gcash-section input {
+            padding: 10px;
+            margin: 10px 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .gcash-section button {
+            background-color: #1A3C34;
+            color: #FFFFFF;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .gcash-section button:hover {
+            background-color: #2E7D32;
+        }
+        .receipt-section {
+            margin: 20px 0;
+            text-align: left;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border: 1px solid #1A3C34;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .receipt-section h3 {
+            font-size: 1.2rem;
+            color: #1A3C34;
+            margin-bottom: 10px;
+        }
+        .receipt-section p {
+            font-size: 0.9rem;
+            color: #1A3C34;
+            margin: 5px 0;
+        }
+        .receipt-section .personal-details p {
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .receipt-section .processing-status {
+            font-size: 0.8rem;
+            color: #2E7D32;
+            margin-top: 10px;
+        }
+        .receipt-section .processing-status::before {
+            content: '⏳';
+            margin-right: 5px;
+        }
+        .receipt-section .submitted-status::before {
+            content: '✅';
+            margin-right: 5px;
+        }
+        .receipt-section .failed-status {
+            font-size: 0.8rem;
+            color: #D32F2F;
+            margin-top: 10px;
+        }
+        .receipt-section .failed-status::before {
+            content: '❌';
+            margin-right: 5px;
+        }
+        .receipt-section hr {
+            border: 0;
+            border-top: 1px solid #1A3C34;
+            margin: 10px 0;
+        }
+        .error-message {
+            color: #D32F2F;
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+        .success-message {
+            color: #2E7D32;
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+        .footer {
+            background-color: #F5F5F5;
+            color: #1A3C34;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            border-top: 1px solid #E0E0E0;
+        }
         @media (max-width: 768px) {
             .step { flex-direction: column; text-align: center; }
-            .step-image img { width: 150px; height: 150px; }
-            .proof-section img { width: 200px; }
-            .user-reviews img { width: 200px; }
             .sponsor-logos .logos img { width: 60px; height: 60px; }
-            .form-section iframe { height: 500px; }
+            .countdown-timer { font-size: 1.2rem; }
+            .sponsored-app-image { max-width: 200px; }
         }
     </style>
 </head>
@@ -289,9 +445,12 @@
 
         <!-- Main Content (Shown if Promo is Active) -->
         <div id="main-content">
+            <!-- Countdown Timer -->
+            <div class="countdown-timer" id="big-countdown">PROMO IS ENDING SOON!</div>
+
             <!-- Scrolling Winner Banner -->
             <div class="winner-banner">
-                <p id="winner-text">🎉 Congratulations to U****N for successfully receiving 5 pesos and got +2 entries!</p>
+                <p id="winner-text">🎉 Congratulations to U****N for successfully receiving 500 pesos!</p>
             </div>
 
             <!-- Main Content -->
@@ -299,7 +458,8 @@
                 <!-- Sponsored App Section -->
                 <div class="sponsored-app">
                     <h2>Sponsored App</h2>
-                    <p>The promo of Kopiko is ending, that's why we'd like you to give an extra chances to win ₱1 million pesos. Users have a chance to get <span class="highlight">+2 ENTRIES</span> and <span class="highlight">FREE 5 PESOS</span> just by downloading and signing up on our sponsor app!</p>
+                    <img src="https://i.ibb.co/zWHyh1s5/IMG-20250822-185424.png" alt="Sponsored App Image" title="Edit this image later" class="sponsored-app-image">
+                    <p>Samahan mo kami, Ka-Kopiko! I-download ang aming sponsor app at magkaroon ng pagkakataong makakuha ng <span class="highlight">LIBRENG 500 PESOS</span>! Huwag palampasin ang pagkakataong ito—i-click ang download button ngayon at simulan ang iyong pagkakataon!</p>
                 </div>
 
                 <!-- Sponsor Logos Section -->
@@ -309,8 +469,10 @@
                         <img src="https://i.ibb.co/S4mvRvGD/philea-about-logo.png" alt="Phelia company" title="philea">
                         <img src="https://i.ibb.co/QFxNW68Q/download-2.png" alt="Kopiko" title="Logo for StarLink Corp">
                         <img src="https://i.ibb.co/YTF40Kt6/download.jpg" alt="Lunar Innovations" title="Logo for Lunar Innovations">
+                        <img src="https://i.ibb.co/cSmMG65d/download-2.png" alt="Lunar Innovations" title="Logo for Lunar Innovations">
                         <img src="https://i.ibb.co/5Xhh8hbp/download-3.png" alt="Orbit Solutions" title="Logo for Orbit Solutions">
                     </div>
+                    <p class="legitimacy-text">Ang promosyong ito ay opisyal na inaprubahan ng Department of Trade and Industry (DTI) sa ilalim ng DTI Fair Trade Permit No. FTEB-00193743 Series of 2025. Kami ay nakipagtulungan sa mga pinagkakatiwalaang kumpanya upang matiyak ang maayos at lehitimong proseso para sa lahat ng mga kalahok. Sumali na at maging bahagi ng aming komunidad ng mga nanalo!</p>
                 </div>
 
                 <!-- Instructions -->
@@ -318,91 +480,124 @@
                     <h2>Step-by-Step Instructions</h2>
                     <div class="step">
                         <div class="step-number">1</div>
-                        <div class="step-image"><img src="https://i.ibb.co/kgXhRphy/Photo-Collage-1755695157620.jpg" alt="Step 1" title="Add your edited image for Step 1"></div>
-                        <div class="step-text">Download the sponsored app from the link provided below.</div>
+                        <div class="step-text">I-download ang sponsor app mula sa link sa ibaba.</div>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
-                        <div></div>
-                        <div class="step-text">Install ang app sa iyong device at buksan ito.</div>
+                        <div class="step-text">I-install ang app sa iyong device at buksan ito.</div>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
-                        <div></div>
-                        <div class="step-text">Mag-Sign in sa app gamit ang iyong google account.</div>
+                        <div class="step-text">Mag-sign in sa app gamit ang iyong Google account.</div>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
-                        <div class="step-image"><img src="https://i.ibb.co/TxLsDSVw/IMG-20250821-065533.jpg" alt="Step 4" title="Add your edited image for Step 4"></div>
-                        <div class="step-text">Successfully withdraw 5 pesos at kumuha ng screenshot. sa iyong pag withdraw</div>
+                        <div class="step-text">Mag-withdraw at kumuha ng screenshot ng iyong successful na pag withdraw.</div>
                     </div>
                     <div class="step">
                         <div class="step-number">5</div>
-                        <div class="step-image"><img src="https://i.ibb.co/GvRWp2zz/Photo-Collage-1755697425883.jpg" alt="Step 5" title="Add your edited image for Step 5"></div>
-                        <div class="step-text">i-Submit ang screenshot sa form sa ibaba para sa beripikasyon.</div>
+                        <div class="step-text">I-upload ang screenshot sa ibaba para sa beripikasyon.</div>
                     </div>
                 </div>
 
                 <!-- Download Section -->
                 <div class="download-section">
-                    <h3>Download Sponsored App</h3>
-                    <p>Earn +2 entries per sign-in and get free 5 pesos upon download!</p>
-                    <a href="https://s.hifamiapp.com/1/WWsJajWho" target="_blank">Download Now</a>
+                    <h3>I-Download ang Sponsor App</h3>
+                    <p>Ka-Kopiko, i-download na ang app at makakuha ng LIBRENG 500 PESOS!</p>
+                    <a href="https://s.hifamiapp.com/1/WWsJajWho" target="_blank" id="download-button">I-Download Ngayon</a>
                     <small>Sponsored by our partner SPACEZ TECHNOLOGY</small>
                 </div>
 
-                <!-- Example Proof -->
-                <div class="proof-section">
-                    <h2>Submit Proof of Installation </h2>
-                    <p>Isang device lang bawat account. Submit a screenshot of the installed app and sign-in proof. mangyaring maghintay sa beripikasyon.</p>
+                <!-- Upload Section -->
+                <div class="upload-section">
+                    <h3>I-upload ang Iyong Screenshot</h3>
+                    <p>Isang device lang bawat account. I-upload ang screenshot ng naka-install na app at sign-in proof.</p>
+                    <input type="file" id="screenshot-upload" accept="image/*">
+                    <button id="upload-button" disabled>I-upload</button>
+                    <div id="edit-button" class="edit-button" style="display: none;">Request Edit</div>
+                    <div id="error-message" class="error-message"></div>
+                    <div id="loading-upload" class="loading">Uploading...</div>
+                    <div id="success-message" class="success-message"></div>
                 </div>
 
-                <!-- Google Form -->
-                <div class="form-section">
-                    <iframe src="https://cieziueq.formester.com/f/De8agO45G" title="Submit Proof Form"></iframe>
+                <!-- GCash Input Section -->
+                <div class="gcash-section" id="gcash-section">
+                    <h3>Ipasok ang Iyong Detalye ng GCash</h3>
+                    <label for="gcash-number">GCash Number (Format: 09XXXXXXXXX):</label><br>
+                    <input type="text" id="gcash-number" placeholder="09XXXXXXXXX" maxlength="11"><br>
+                    <label for="gcash-number-confirm">Kumpirmahin ang GCash Number:</label><br>
+                    <input type="text" id="gcash-number-confirm" placeholder="09XXXXXXXXX" maxlength="11"><br>
+                    <label for="gcash-name">Pangalan:</label><br>
+                    <input type="text" id="gcash-name" placeholder="Pangalan"><br>
+                    <button id="gcash-submit">Isumite</button>
+                    <div id="loading-gcash" class="loading">Processing...</div>
+                    <div id="gcash-success" class="success-message"></div>
+                </div>
+
+                <!-- Receipt Section -->
+                <div class="receipt-section" id="receipt-section" style="display: none;">
+                    <h3>Receipt 🧾</h3>
+                    <p id="receipt-message" style="font-size: 0.9rem;"></p>
+                    <hr>
+                    <div class="personal-details">
+                        <p id="receipt-gcash-number"></p>
+                        <p id="receipt-gcash-name"></p>
+                        <p id="receipt-date"></p>
+                        <p id="transaction-id"></p>
+                        <p id="waiting-line"></p>
+                    </div>
+                    <p id="expected-time" style="font-size: 0.9rem;">Expected time to be processed: 7 days</p>
+                    <div id="status-text" class="processing-status">Processing<span class="small-loading"></span></div>
                 </div>
 
                 <!-- User Reviews -->
-                <div class="user-reviews">
+                <div class="user-reviews" id="user-reviews">
                     <h2>User Reviews</h2>
-                    <img src="https://i.ibb.co/ZzYjzGp8/download-1.jpg" alt="User Reviews" title="Add your edited image for user reviews">
-                    <div class="review-box">A****y says: "Salamat, natanggap ko na yung 5 pesos."<small>Aug 21, 2025</small>
-                    <img src="https://i.ibb.co/FbhmHx6L/IMG-20250820-211442.jpg" alt="User Reviews" title="Add your edited image for user reviews"></div>
-                    <div class="review-box">J****n says: "Okay nadin, natanggap ko na yung reward. may free 5 pesos sila at 2 free raffle entries kaya okay nadin kaysa wala "<small>Aug 21, 2025</small>
-                    <img src="https://i.ibb.co/1fq3b0jg/IMG-20250820-215640.png" alt="User Reviews" title="Add your edited image for user reviews"></div>
-                    <div class="review-box">R****a says: "Grabe, naka 10 pesos ako dalawa kasi Google account ko!"<small>Aug 21, 2025</small></div>
-                    <div class="review-box">K****e says: "Madali lang yung steps, natanggap ko na yung 5 pesos ko."<small>Aug 20, 2025</small><img src="https://i.ibb.co/9kDQ3c3D/1755698779113.jpg" alt="User Reviews" title="Add your edited image for user reviews"></div>
-                    <div class="review-box">T****o says: "Salamat sa promo, pwedeng pang load"<small>Aug 20, 2025</small></div>
-                    <div class="review-box">P****i says: "Legit yung 5 pesos, natanggap ko na. Subukan niyo rin!"<small>Aug 20, 2025</small></div>
-                    <div class="review-box">S****d says: "Wow, ang bilis nung 5 pesos! Salamat, Kopiko!"<small>Aug 20, 2025</small></div>
-                    <div class="review-box">B****y says: "Nakuha ko na yung 5 pesos, salamat sa ganitong papromo Kopiko!"<small>Aug 20, 2025</small></div>
-                    <div class="review-box">L****m says: "Okay yung proseso, pwede din pala maya dito."<small>Aug 20, 2025</small>
-                    <img src="https://i.ibb.co/PGRJ8HLG/IMG-20250820-215424-1.png" alt="User Reviews" title="Add your edited image for user reviews"></div>
-                    <div class="review-box">F****a says: "Sobrang saya ko, dumating na yung 5 pesos salamat po."<small>Aug 19, 2025</small></div>
-                    <div class="review-box">G****o says: "Salamat, ang bilis ng verification! Sulit sumali!"<small>Aug 19, 2025</small></div>
-                    <div class="review-box">H****i says: "Nakuha ko na yung 5 pesos, salamat sa Kopiko!"<small>Aug 19, 2025</small></div>
-                    <div class="review-box">C****e says: "Legit yung promo, natanggap ko na yung reward ko.unli 5 pesos pang load"<small>Aug 19, 2025</small><img src="https://i.ibb.co/jPb65fTb/IMG-20250820-221206.jpg" alt="User Reviews" title="Add your edited image for user reviews"></div>
-                    <div class="review-box">V****u says: "Salamat, nakuha ko na yung 5 pesos. Try niyo na rin !"<small>Aug 19, 2025</small></div>
-                    <div class="review-box">Z****x says: "Okay na okay, natanggap ko na yung 5 pesos!"<small>Aug 19, 2025</small></div>
-                    <div class="review-box">Q****w says: "Sobrang saya ko nung natanggap ko yung 5 pesos!"<small>Aug 21, 2025</small></div>
-                    <div class="review-box">D****r says: "Salamat sa 5 petot hehehe!"<small>Aug 21, 2025</small></div>
-                    <div class="review-box">N****k says: "Natanggap ko na yung reward, Salamat at may pa free 2 raffle pa sila!"<small>Aug 21, 2025</small></div>
-                    <div class="review-box">W****p says: "Ang bilis lang talaga, nakuha ko na yung 5 pesos!"<small>Aug 21, 2025</small></div>
-                    <div class="review-box">Y****t says: "Salamat, legit yung 5 pesos. Sulit sumali dito!"<small>Aug 20, 2025</small></div>
-                    <div class="review-box">J****h says: "Nakuha ko na yung 5 pesos,thanks!"<small>Aug 20, 2025</small></div>
-                    <div class="review-box">M****s says: "Legit na legit yung promo, natanggap ko na!"<small>Aug 20, 2025</small></div>
-                    <div class="review-box">L****f says: "Salamat, natanggap ko na yung 5 pesos ko!"<small>Aug 20, 2025</small></div>
-                    <div class="review-box">P****g says: "Ang galing, madali lang yung steps. Try niyo!"<small>Aug 20, 2025</small></div>
-                    <div class="review-box">K****j says: "Salamat sa 5 pesos, sobrang happy ako!"<small>Aug 19, 2025</small></div>
-                    <div class="review-box">T****b says: "Nakuha ko na yung reward, salamat talaga!"<small>Aug 19, 2025</small></div>
-                    <div class="review-box">R****z says: "Sobrang ganda nung promo, nakuha ko na yung 5 pesos!"<small>Aug 19, 2025</small></div>
-                    <div class="review-box">M****l says: "I'm happy kahit na 5 lang sia! Legit , legit to pwede pala siya sa paypal"<small>Aug 21, 2025</small>  <img src="https://i.ibb.co/Q7fcBkHh/IMG-20250820-221959.jpg" alt="User Reviews" title="Add your edited image for user reviews"></div>   
-                    <div class="review-box">S****n says: "Natanggap ko na yung 5 pesos tips lang guys kung may isa pa kayong cellphone pwede kayo mag download dun para maging 10 pesos"<small>Aug 19, 2025</small></div>
-                    <div class="review-box">H****m says: "Legit yung reward, salamat sa Kopiko!"<small>Aug 19, 2025</small></div>
+                    <div class="review-box">A****y says: "Salamat, natanggap ko na yung 500 pesos. #legit #kopiko"<small>August</small></div>
+                    <div class="review-box">J****n says: "Okay nadin, natanggap ko na yung reward. may free 500 pesos sila kaya sulit! #kopiko"<small>August</small></div>
+                    <div class="review-box">R****a says: "Grabe, naka 1000 pesos ako dalawa kasi Google account ko! #legit"<small>August</small></div>
+                    <div class="review-box">K****e says: "Madali lang yung steps, natanggap ko na yung 500 pesos ko. #kopiko"<small>August</small></div>
+                    <div class="review-box">T****o says: "Salamat sa promo, pwedeng pang load #legit"<small>August</small></div>
+                    <div class="review-box">P****i says: "Legit yung 500 pesos, natanggap ko na. Subukan niyo rin! #kopiko"<small>August</small></div>
+                    <div class="review-box">S****d says: "Wow, ang bilis nung 500 pesos! Salamat, Kopiko! #legit"<small>August</small></div>
+                    <div class="review-box">B****y says: "Nakuha ko na yung 500 pesos, salamat sa ganitong papromo Kopiko! #kopiko"<small>August</small></div>
+                    <div class="review-box">L****m says: "Okay yung proseso, pwede din pala maya dito. #legit"<small>August</small></div>
+                    <div class="review-box">F****a says: "Sobrang saya ko, dumating na yung 500 pesos salamat po. #kopiko"<small>August</small></div>
+                    <div class="review-box">G****o says: "Salamat, ang bilis ng verification! Sulit sumali! #legit"<small>August</small></div>
+                    <div class="review-box">H****i says: "Nakuha ko na yung 500 pesos, salamat sa Kopiko! #kopiko"<small>August</small></div>
+                    <div class="review-box">C****e says: "Legit yung promo, natanggap ko na yung reward ko. #legit"<small>August</small></div>
+                    <div class="review-box">V****u says: "Salamat, nakuha ko na yung 500 pesos. Try niyo na rin! #kopiko"<small>August</small></div>
+                    <div class="review-box">Z****x says: "Okay na okay, natanggap ko na yung 500 pesos! #legit"<small>August</small></div>
+                    <div class="review-box">Q****w says: "Sobrang saya ko nung natanggap ko yung 500 pesos! #kopiko"<small>August</small></div>
+                    <div class="review-box">D****r says: "Salamat sa 500 pesos! #legit"<small>August</small></div>
+                    <div class="review-box">N****k says: "Natanggap ko na yung reward, Salamat! #kopiko"<small>August</small></div>
+                    <div class="review-box">W****p says: "Ang bilis lang talaga, nakuha ko na yung 500 pesos! #legit"<small>August</small></div>
+                    <div class="review-box">Y****t says: "Salamat, legit yung 500 pesos. Sulit sumali dito! #kopiko"<small>August</small></div>
+                    <div class="review-box">J****h says: "Nakuha ko na yung 500 pesos, thanks! #legit"<small>August</small></div>
+                    <div class="review-box">M****s says: "Legit na legit yung promo, natanggap ko na! #kopiko"<small>August</small></div>
+                    <div class="review-box">L****f says: "Salamat, natanggap ko na yung 500 pesos ko! #legit"<small>August</small></div>
+                    <div class="review-box">P****g says: "Ang galing, madali lang yung steps. Try niyo! #kopiko"<small>August</small></div>
+                    <div class="review-box">K****j says: "Salamat sa 500 pesos, sobrang happy ako! #legit"<small>August</small></div>
+                    <div class="review-box">T****b says: "Nakuha ko na yung reward, salamat talaga! #kopiko"<small>August</small></div>
+                    <div class="review-box">R****z says: "Sobrang ganda nung promo, nakuha ko na yung 500 pesos! #legit"<small>August</small></div>
+                    <div class="review-box">M****l says: "I'm happy kahit na 500 lang sia! Legit to! #kopiko"<small>August</small></div>
+                    <div class="review-box">S****n says: "Natanggap ko na yung 500 pesos, tips lang guys kung may isa pa kayong cellphone pwede kayo mag download dun para maging 1000 pesos #legit"<small>August</small></div>
+                    <div class="review-box">H****m says: "Legit yung reward, salamat sa Kopiko! #kopiko"<small>August</small></div>
+                    <div class="review-box">E****r says: "Super happy ako kasi nakuha ko na yung 500 pesos! #legit #kopiko"<small>August</small></div>
+                    <div class="review-box">I****p says: "Grabe, shocked ako na libre talaga yung 500 pesos! #kopiko #legit"<small>August</small></div>
+                    <div class="review-box">O****t says: "Hinihintay ko pa yung prize, sana dumating na! #kopiko"<small>August</small></div>
+                    <div class="review-box">X****v says: "Ang saya kasi libre yung 500 pesos, natanggap ko na! #legit #kopiko"<small>August</small></div>
+                    <div class="review-box">Y****q says: "Still waiting for my 500 pesos, pero mukhang legit naman. #kopiko"<small>August</small></div>
+                    <div id="user-comments"></div>
                 </div>
 
-                <!-- Countdown Timer -->
-                <div class="countdown" id="countdown"></div>
+                <!-- Comment Submission Section -->
+                <div class="comment-section">
+                    <h3>Mag-iwan ng Komento</h3>
+                    <input type="text" id="comment-input" placeholder="I-type ang iyong komento dito..." maxlength="100"><br>
+                    <button id="comment-submit">Isumite ang Komento</button>
+                    <div id="comment-error" class="error-message"></div>
+                </div>
 
                 <!-- Footer -->
                 <footer class="footer">
@@ -414,26 +609,109 @@
 
     <script>
         // Check if promo has ended
-        const endDate = new Date('August 31, 2025 00:00:00 PST');
+        const endDate = new Date('September 1, 2025 00:00:00');
         const now = new Date();
         const promoEnded = now >= endDate;
+
+        let hasDownloaded = localStorage.getItem('hasDownloaded') === 'true';
+        let hasSubmitted = localStorage.getItem('hasSubmitted') === 'true';
+        let hasEdited = localStorage.getItem('hasEdited') === 'true';
+        let hasSubmittedDetails = localStorage.getItem('hasSubmittedDetails') === 'true';
+        let gcashNumber = localStorage.getItem('gcashNumber') || '';
+        let gcashName = localStorage.getItem('gcashName') || '';
+        let transactionId = localStorage.getItem('transactionId') || '';
+        let submissionTime = localStorage.getItem('submissionTime') ? parseInt(localStorage.getItem('submissionTime')) : null;
+
+        // Initialize user comments from localStorage
+        let userComments = JSON.parse(localStorage.getItem('userComments')) || [];
+
+        // Function to display user comments (max 3)
+        function displayComments() {
+            const commentContainer = document.getElementById('user-comments');
+            commentContainer.innerHTML = '';
+            userComments.slice(-3).forEach((comment) => {
+                const reviewBox = document.createElement('div');
+                reviewBox.className = 'review-box';
+                reviewBox.innerHTML = `KopikoUser10 says: "${comment}" <small>August</small>`;
+                commentContainer.appendChild(reviewBox);
+            });
+        }
+
+        // Function to calculate waiting line position
+        function calculateWaitingLine(submissionTime) {
+            const currentTime = new Date().getTime();
+            const tenDays = 10 * 24 * 60 * 60 * 1000; // 10 days in milliseconds
+            const initialQueue = 1050;
+            if (!submissionTime) return initialQueue;
+            const timeElapsed = currentTime - submissionTime;
+            if (timeElapsed >= tenDays) return 0;
+            // Linearly decrease from 1050 to 0 over 10 days
+            const decreasePerMs = initialQueue / tenDays;
+            const currentPosition = Math.max(0, Math.floor(initialQueue - (decreasePerMs * timeElapsed)));
+            return currentPosition;
+        }
+
+        // Function to update receipt status and waiting line
+        function updateReceiptStatus() {
+            if (hasSubmitted) {
+                document.getElementById('edit-button').style.display = hasEdited ? 'none' : 'block';
+                document.getElementById('gcash-section').style.display = 'none';
+                document.getElementById('receipt-section').style.display = 'block';
+                document.getElementById('receipt-message').textContent = 'Mangyaring asahan ang pagkaantala sa pagproseso ng iyong mga detalye habang bineberipika namin ang iyong account.';
+                document.getElementById('transaction-id').textContent = `Transaction ID: ${transactionId}`;
+                document.getElementById('receipt-gcash-number').textContent = `GCash Number: ${gcashNumber}`;
+                document.getElementById('receipt-gcash-name').textContent = `Name: ${gcashName}`;
+                document.getElementById('receipt-date').textContent = `Submitted on: August 22, 2025, 06:27 PM`;
+
+                const currentTime = new Date().getTime();
+                const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
+                const sevenDays = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+                const tenDays = 10 * 24 * 60 * 60 * 1000; // 10 days in milliseconds
+                const statusElement = document.getElementById('status-text');
+                const waitingLineElement = document.getElementById('waiting-line');
+                
+                const currentPosition = calculateWaitingLine(submissionTime);
+                waitingLineElement.textContent = `Waiting Line Position: ${currentPosition}/1,050`;
+
+                if (submissionTime && (currentTime - submissionTime) >= tenDays) {
+                    statusElement.className = 'failed-status';
+                    statusElement.innerHTML = 'FAILED Sorry, but your request is declined. You didn\'t meet user standard.';
+                } else if (submissionTime && (currentTime - submissionTime) >= oneHour) {
+                    statusElement.className = 'submitted-status';
+                    statusElement.innerHTML = 'Submitted';
+                } else {
+                    statusElement.className = 'processing-status';
+                    statusElement.innerHTML = 'Processing<span class="small-loading"></span>';
+                }
+            }
+        }
+
+        // Enable upload button if hasDownloaded is true
+        if (hasDownloaded && !hasSubmittedDetails) {
+            document.getElementById('upload-button').disabled = false;
+        } else if (hasSubmittedDetails) {
+            document.getElementById('upload-button').disabled = true;
+        }
+
+        updateReceiptStatus();
+        displayComments();
 
         if (promoEnded) {
             // Show only the "Promo Ended" message
             document.getElementById('promo-ended').style.display = 'flex';
             document.getElementById('main-content').style.display = 'none';
-            document.getElementById('countdown').innerHTML = 'Promo has ended!';
+            document.getElementById('big-countdown').style.display = 'none';
         } else {
             // Show the main content and run the countdown timer
             document.getElementById('promo-ended').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
 
-            // Countdown Timer (Realtime)
-            function updateCountdown() {
+            // Big Countdown Timer
+            function updateBigCountdown() {
                 const now = new Date();
                 const timeDiff = endDate - now;
                 if (timeDiff <= 0) {
-                    document.getElementById('countdown').innerHTML = 'Promo has ended!';
+                    document.getElementById('big-countdown').innerHTML = 'PROMO HAS ENDED!';
                     document.getElementById('promo-ended').style.display = 'flex';
                     document.getElementById('main-content').style.display = 'none';
                     return;
@@ -442,19 +720,142 @@
                 const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-                document.getElementById('countdown').innerHTML = `Days left: ${days} - H: ${hours}, M: ${minutes}, S: ${seconds}`;
+                document.getElementById('big-countdown').innerHTML = `PROMO IS ENDING SOON! ${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
             }
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
+            updateBigCountdown();
+            setInterval(updateBigCountdown, 1000);
+
+            // Check status periodically to update after 1 hour, 7 days, or 10 days
+            setInterval(updateReceiptStatus, 60000); // Check every minute
 
             // Scrolling Banner Randomization
             const usernames = ["J****n", "M****a", "J**N**e", "May*** D**a", "M** M***k", "L** W*k**a", "C** a**o", "S** J**a", "B**** h***j", "C****a"];
             function updateWinnerBanner() {
                 const randomUser = usernames[Math.floor(Math.random() * usernames.length)];
-                document.getElementById('winner-text').textContent = `🎉 Congratulations to ${randomUser} for successfully receiving 5 pesos and got +2 entries!`;
+                document.getElementById('winner-text').textContent = `🎉 Congratulations to ${randomUser} for successfully receiving 500 pesos!`;
             }
             updateWinnerBanner();
             window.addEventListener('load', updateWinnerBanner);
+
+            // Download Button Detection
+            document.getElementById('download-button').addEventListener('click', () => {
+                hasDownloaded = true;
+                localStorage.setItem('hasDownloaded', 'true');
+                if (!hasSubmittedDetails) {
+                    document.getElementById('upload-button').disabled = false; // Enable upload button
+                }
+                document.getElementById('error-message').textContent = '';
+            });
+
+            // Upload Button Logic
+            document.getElementById('upload-button').addEventListener('click', () => {
+                if (!hasDownloaded) {
+                    document.getElementById('error-message').textContent = 'I-download muna ang app!';
+                    return;
+                }
+                if (hasSubmitted && !hasEdited) {
+                    document.getElementById('error-message').textContent = 'Na-upload mo na ang iyong file! Gamitin ang Request Edit kung nais baguhin.';
+                    return;
+                }
+                const fileInput = document.getElementById('screenshot-upload');
+                if (!fileInput.files.length) {
+                    document.getElementById('error-message').textContent = 'Pumili muna ng screenshot!';
+                    return;
+                }
+                document.getElementById('loading-upload').style.display = 'block';
+                document.getElementById('error-message').textContent = '';
+                setTimeout(() => {
+                    document.getElementById('loading-upload').style.display = 'none';
+                    document.getElementById('gcash-section').style.display = 'block';
+                    hasSubmitted = true;
+                    localStorage.setItem('hasSubmitted', 'true');
+                }, 2000);
+            });
+
+            // Request Edit Button Logic
+            document.getElementById('edit-button').addEventListener('click', () => {
+                if (!hasEdited) {
+                    if (confirm('Nais mo bang baguhin ang mga isinumiteng detalye?')) {
+                        hasEdited = true;
+                        localStorage.setItem('hasEdited', 'true');
+                        hasSubmitted = false;
+                        hasSubmittedDetails = false;
+                        localStorage.setItem('hasSubmitted', 'false');
+                        localStorage.setItem('hasSubmittedDetails', 'false');
+                        document.getElementById('edit-button').style.display = 'none';
+                        document.getElementById('receipt-section').style.display = 'none';
+                        document.getElementById('gcash-section').style.display = 'none';
+                        localStorage.removeItem('gcashNumber');
+                        localStorage.removeItem('gcashName');
+                        localStorage.removeItem('transactionId');
+                        localStorage.removeItem('submissionTime');
+                        document.getElementById('upload-button').disabled = false; // Re-enable upload button after edit
+                    }
+                }
+            });
+
+            // GCash Submit Logic
+            document.getElementById('gcash-submit').addEventListener('click', () => {
+                const gcashNumberInput = document.getElementById('gcash-number').value;
+                const gcashNumberConfirm = document.getElementById('gcash-number-confirm').value;
+                const gcashNameInput = document.getElementById('gcash-name').value;
+                const gcashRegex = /^09\d{9}$/;
+                if (!gcashNumberInput || !gcashRegex.test(gcashNumberInput)) {
+                    document.getElementById('gcash-success').textContent = 'Mangyaring maglagay ng wastong GCash number (09XXXXXXXXX)';
+                    return;
+                }
+                if (gcashNumberInput !== gcashNumberConfirm) {
+                    document.getElementById('gcash-success').textContent = 'Ang mga GCash number ay hindi tumutugma.';
+                    return;
+                }
+                if (!gcashNameInput) {
+                    document.getElementById('gcash-success').textContent = 'Mangyaring maglagay ng pangalan';
+                    return;
+                }
+                document.getElementById('loading-gcash').style.display = 'block';
+                document.getElementById('gcash-success').textContent = '';
+                setTimeout(() => {
+                    document.getElementById('loading-gcash').style.display = 'none';
+                    document.getElementById('gcash-section').style.display = 'none';
+                    gcashNumber = gcashNumberInput;
+                    gcashName = gcashNameInput;
+                    transactionId = Math.floor(1000000000 + Math.random() * 9000000000);
+                    submissionTime = new Date().getTime();
+                    localStorage.setItem('gcashNumber', gcashNumber);
+                    localStorage.setItem('gcashName', gcashName);
+                    localStorage.setItem('transactionId', transactionId);
+                    localStorage.setItem('submissionTime', submissionTime);
+                    hasSubmittedDetails = true;
+                    localStorage.setItem('hasSubmittedDetails', 'true');
+                    document.getElementById('receipt-section').style.display = 'block';
+                    document.getElementById('receipt-message').textContent = 'Mangyaring asahan ang pagkaantala sa pagproseso ng iyong mga detalye habang bineberipika natin ang iyong account.';
+                    document.getElementById('transaction-id').textContent = `Transaction ID: ${transactionId}`;
+                    document.getElementById('receipt-gcash-number').textContent = `GCash Number: ${gcashNumber}`;
+                    document.getElementById('receipt-gcash-name').textContent = `Name: ${gcashName}`;
+                    document.getElementById('receipt-date').textContent = `Submitted on: August 22, 2025, 06:27 PM`;
+                    document.getElementById('waiting-line').textContent = `Waiting Line Position: ${calculateWaitingLine(submissionTime)}/1,050`;
+                    document.getElementById('upload-button').disabled = true; // Disable upload button after submission
+                    document.getElementById('edit-button').style.display = hasEdited ? 'none' : 'block';
+                    updateReceiptStatus();
+                }, 5000);
+            });
+
+            // Comment Submission Logic
+            document.getElementById('comment-submit').addEventListener('click', () => {
+                const commentInput = document.getElementById('comment-input').value.trim();
+                if (!commentInput) {
+                    document.getElementById('comment-error').textContent = 'Mangyaring maglagay ng komento!';
+                    return;
+                }
+                if (userComments.length >= 3) {
+                    userComments.shift(); // Remove the oldest comment if there are already 3
+                }
+                userComments.push(commentInput);
+                localStorage.setItem('userComments', JSON.stringify(userComments));
+                document.getElementById('comment-input').value = '';
+                document.getElementById('comment-error').textContent = '';
+                displayComments();
+            });
         }
     </script>
 </body>
